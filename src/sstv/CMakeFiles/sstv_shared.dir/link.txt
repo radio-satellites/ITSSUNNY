@@ -1,0 +1,1 @@
+/usr/lib64/ccache/cc -fPIC  -Wmissing-prototypes -Wstrict-prototypes -Wold-style-definition -Wl,--dependency-file=CMakeFiles/sstv_shared.dir/link.d -shared -Wl,-soname,libsstv.so -o lib/libsstv.so CMakeFiles/sstv_shared.dir/src/sstv.c.o CMakeFiles/sstv_shared.dir/src/encoder.c.o CMakeFiles/sstv_shared.dir/src/luts.c.o

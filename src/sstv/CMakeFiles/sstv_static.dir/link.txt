@@ -1,0 +1,2 @@
+/usr/bin/ar qc lib/libsstv.a CMakeFiles/sstv_static.dir/src/sstv.c.o CMakeFiles/sstv_static.dir/src/encoder.c.o CMakeFiles/sstv_static.dir/src/luts.c.o
+/usr/bin/ranlib lib/libsstv.a
