@@ -1,1 +1,4 @@
 commit.sh
+/src/sstv/bin
+/src/sstv/include
+/src/sstv/lib
