@@ -1,9 +1,0 @@
-/home/ve3svf/Documents/ItsSunnyFlightComputer/src/sstv/CMakeFiles/sstv_shared.dir
-/home/ve3svf/Documents/ItsSunnyFlightComputer/src/sstv/CMakeFiles/sstv_static.dir
-/home/ve3svf/Documents/ItsSunnyFlightComputer/src/sstv/CMakeFiles/sstv-encode.dir
-/home/ve3svf/Documents/ItsSunnyFlightComputer/src/sstv/CMakeFiles/edit_cache.dir
-/home/ve3svf/Documents/ItsSunnyFlightComputer/src/sstv/CMakeFiles/rebuild_cache.dir
-/home/ve3svf/Documents/ItsSunnyFlightComputer/src/sstv/CMakeFiles/list_install_components.dir
-/home/ve3svf/Documents/ItsSunnyFlightComputer/src/sstv/CMakeFiles/install.dir
-/home/ve3svf/Documents/ItsSunnyFlightComputer/src/sstv/CMakeFiles/install/local.dir
-/home/ve3svf/Documents/ItsSunnyFlightComputer/src/sstv/CMakeFiles/install/strip.dir

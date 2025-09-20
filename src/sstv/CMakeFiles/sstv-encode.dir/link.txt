@@ -1,1 +1,0 @@
-/usr/lib64/ccache/c++ -Wl,--dependency-file=CMakeFiles/sstv-encode.dir/link.d "CMakeFiles/sstv-encode.dir/src/tools/sstv-encode.cpp.o" -o bin/sstv-encode  -Wl,-rpath,/home/ve3svf/Documents/ItsSunnyFlightComputer/src/sstv/lib: lib/libsstv.so /usr/lib64/libsndfile.so /usr/lib64/libMagick++-7.Q16HDRI.so

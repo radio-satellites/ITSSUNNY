@@ -1,0 +1,9 @@
+simulation_on: true #do we use SITL simulation for development?
+
+transmitter:
+  tx_sstv: true #transmit SSTV?
+  tx_aprs: true #transmit APRS?
+aprs:
+  aprs_packets: 10 #number of APRS packets between SSTV transmissions
+  aprs_period: 10 #time in seconds between APRS packets
+
