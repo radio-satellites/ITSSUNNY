@@ -223,24 +223,26 @@ def demo_path(t0: datetime.datetime, t: float) -> Tuple[float, float]:
     # center Toronto-ish if no coords provided
     center_lat = 43.6532
     center_lon = -79.3832
-    radius_deg = 0.0015  # ~167m
-    angle = (t / 60.0) * 2 * math.pi  # one revolution every 60s
-    lat = center_lat + radius_deg * math.cos(angle)
-    lon = center_lon + radius_deg * math.sin(angle)
-    return lat, lon
+    radius_deg = 0.1
+    angle = (t / 6.0) * 2 * math.pi  # one revolution every 6s
+    lat = round(center_lat + radius_deg * math.cos(angle),7) + 0.01*t
+    lon = round(center_lon + radius_deg * math.sin(angle),7) + 0.005*t
+    alt = int(calls*3)
+    return lat, lon, alt
 
-
+calls = 0
 def returnGPS():
-
+    global calls
     if True: #In case you're wondering about this line - don't ask.
         start = time.time()
+        calls += 1
         rate = 1.0
         try:
             while True:
                 t = time.time() - start
-                lat, lon = demo_path(datetime.datetime.utcnow(), t)
+                lat, lon, alt = demo_path(datetime.datetime.utcnow(), calls)
                 ts = datetime.datetime.utcnow()
-                sentences = build_all_sentences(lat, lon, 100, sats=8, speed_knots=0, course=270, hdop=1.1, fix_quality=1, timestamp=ts)
+                sentences = build_all_sentences(lat, lon, alt, sats=8, speed_knots=0, course=270, hdop=1.1, fix_quality=1, timestamp=ts)
                 return '\r\n'.join(sentences)
         except KeyboardInterrupt:
             return

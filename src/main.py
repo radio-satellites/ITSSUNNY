@@ -5,7 +5,9 @@ import os
 import state
 import time
 import threading
-from gps import fc_gps
+
+#Read config files before loading drivers
+
 
 print("======ITSSUNNYMISSIONSOFTWARE======")
 print("Written by VE3SVF with components ")
@@ -16,7 +18,7 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
     handlers=[
-        logging.FileHandler("mission.log", mode="w"),  # writes to file
+        logging.FileHandler("./logs/mission.log", mode="w"),  # writes to file
         logging.StreamHandler()                        # prints to stdout
     ]
 )
@@ -41,7 +43,15 @@ if bool(config['transmitter']['tx_aprs']):
 
 state.aprs_packets = int(config['aprs']['aprs_packets'])
 state.aprs_period = int(config['aprs']['aprs_period'])
+state.callsign = config['callsign']
+state.camera_period = int(config['camera']['camera_period'])
 logging.info("Config file OK.")
+
+#Load drivers for gps, aprs and camera
+from gps import fc_gps
+from aprs import aprs
+from camera import camera
+
 
 logging.info("Starting GPS reader...")
 gps_thread = threading.Thread(target=fc_gps.mainloop)
@@ -61,4 +71,9 @@ logging.info(
 )
 state.changeState(state.IDLE)
 # start the main loop!
-#while True:
+while True:
+    for i in range(state.aprs_packets):
+        #Send APRS packet
+        logging.info("Sending APRS packet...")
+        aprs.sendAPRS()
+        time.sleep(state.aprs_period)

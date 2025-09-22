@@ -1,9 +1,12 @@
 simulation_on: true #do we use SITL simulation for development?
 
+callsign: "VE3SVF" #Your callsign, for SSTV and APRS transmissions
+
 transmitter:
   tx_sstv: true #transmit SSTV?
   tx_aprs: true #transmit APRS?
 aprs:
   aprs_packets: 10 #number of APRS packets between SSTV transmissions
-  aprs_period: 10 #time in seconds between APRS packets
-
+  aprs_period: 30 #time in seconds between APRS packets
+camera:
+  camera_period: 1 #time in seconds between camera captures (note that this does not take into account capture speed)
