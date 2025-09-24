@@ -225,8 +225,8 @@ def demo_path(t0: datetime.datetime, t: float) -> Tuple[float, float]:
     center_lon = -79.3832
     radius_deg = 0.1
     angle = (t / 6.0) * 2 * math.pi  # one revolution every 6s
-    lat = round(center_lat + radius_deg * math.cos(angle),7) + 0.01*t
-    lon = round(center_lon + radius_deg * math.sin(angle),7) + 0.005*t
+    lat = round(center_lat + radius_deg * math.cos(angle),7) + 0.0001*t
+    lon = round(center_lon + radius_deg * math.sin(angle),7) + 0.0005*t
     alt = int(calls*3)
     return lat, lon, alt
 

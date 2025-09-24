@@ -18,7 +18,7 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
     handlers=[
-        logging.FileHandler("./logs/mission.log", mode="w"),  # writes to file
+        logging.FileHandler("./src/logs/mission.log", mode="w"),  # writes to file
         logging.StreamHandler()                        # prints to stdout
     ]
 )
@@ -51,11 +51,15 @@ logging.info("Config file OK.")
 from gps import fc_gps
 from aprs import aprs
 from camera import camera
-
+from sstv import sstv
 
 logging.info("Starting GPS reader...")
 gps_thread = threading.Thread(target=fc_gps.mainloop)
 gps_thread.start()
+
+logging.info("Starting camera...")
+camera_thread = threading.Thread(target=camera.mainloop)
+camera_thread.start()
 
 #Check for GPS Lock
 state.changeState(state.GPS_WAIT_FIX)
@@ -77,3 +81,6 @@ while True:
         logging.info("Sending APRS packet...")
         aprs.sendAPRS()
         time.sleep(state.aprs_period)
+    #send SSTV
+    sstv.run_encoding()
+    sstv.send_sstv()

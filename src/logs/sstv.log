@@ -1,0 +1,4 @@
+2025-09-23 20:03:18,376 [INFO] sstv: SSTV log initialized
+2025-09-23 20:03:23,381 [INFO] sstv: Selected image: 163.jpg
+2025-09-23 20:03:23,552 [INFO] sstv: Saved annotated image to /home/ve3svf/Documents/ItsSunnyFlightComputer/src/sstv/images/annotated_163.png
+2025-09-23 20:03:24,054 [INFO] sstv: Running pysstv on annotated_163.png, saving to output.wav

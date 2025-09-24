@@ -38,7 +38,7 @@ def aprs_position_packet(lat, lon, symbol_table='/', symbol='O', comment='', inc
     lon_str = f"{lon_deg:03d}{lon_min:05.2f}{lon_hem}"
 
     # Assemble packet
-    info_field = f"!{timestamp_str}{lat_str}{symbol_table}{lon_str}{symbol}{comment}"
+    info_field = f"!{lat_str}{symbol_table}{lon_str}{symbol}{comment}" #replace with {timestamp_str} at the beginning
     return info_field
 
 def sendAPRS():

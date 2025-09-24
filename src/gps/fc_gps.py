@@ -14,7 +14,7 @@ gps_logger.setLevel(logging.INFO)
 formatter = logging.Formatter("%(asctime)s [%(levelname)s] %(name)s: %(message)s")
 
 if not gps_logger.handlers:  # avoid duplicates if imported again
-    fh = logging.FileHandler("./logs/gps.log", mode="w")
+    fh = logging.FileHandler("./src/logs/gps.log", mode="w")
     fh.setFormatter(formatter)
     gps_logger.addHandler(fh)
     gps_logger.propagate = False
